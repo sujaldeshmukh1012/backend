@@ -8,6 +8,10 @@ from autoslug import AutoSlugField
 # Create your models here.
 
 
+def user_directory_path(instance, filename):
+    return '{0}/{1}'.format(instance.title, filename)
+
+
 class Post(models.Model):
     picture = models.ImageField(
         upload_to='images', verbose_name='Picture', null=False)
