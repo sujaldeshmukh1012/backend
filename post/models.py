@@ -9,7 +9,7 @@ from autoslug import AutoSlugField
 
 
 def user_directory_path(instance, filename):
-    return '{0}/{1}'.format(instance.title, filename)
+    return '{0}/{1}'.format(instance.id, filename)
 
 
 class Post(models.Model):
