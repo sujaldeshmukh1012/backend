@@ -45,7 +45,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF = 'Blog.urls'
+ROOT_URLCONF = 'blog.urls'
 
 TEMPLATES = [
     {
@@ -63,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Blog.wsgi.application'
+WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
