@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -179,3 +179,5 @@ CORS_ORIGIN_WHITELIST = [
     'https://gutsnbraces.com'
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+django_heroku.settings(locals())
