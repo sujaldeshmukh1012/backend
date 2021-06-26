@@ -1,4 +1,3 @@
-from views.models import IpModel
 from django.db import models
 
 
@@ -29,7 +28,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     views = models.ManyToManyField(
-        IpModel, blank=True)
+        'post.IpModel', blank=True)
     isvisible = models.BooleanField(default=True, null=True)
 
     def get_absolute_url(self):
@@ -37,3 +36,11 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class IpModel(models.Model):
+    ip = models.CharField(max_length=100)
+    time = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.ip

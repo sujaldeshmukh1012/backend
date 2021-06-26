@@ -1,12 +1,10 @@
-from views.models import IpModel
-from post.models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, IpModelSerializer
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import filters
 from rest_framework import generics
-
+from .models import Post, IpModel
 
 # Create your views here.
 
@@ -74,3 +72,10 @@ class SearchView(generics.ListAPIView):
     filter_backends = [filters.SearchFilter]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class IpModelIndex(APIView):
+    def get(self, request, format=None):
+        ipModel = IpModel.objects.all()
+        serialize = IpModelSerializer(ipModel, many=True)
+        return Response(serialize.data)

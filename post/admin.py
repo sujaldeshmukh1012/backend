@@ -1,4 +1,4 @@
-from .models import Post
+from .models import IpModel, Post
 from django.contrib import admin
 
 # Register your models here.
@@ -11,4 +11,12 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ('-posted',)
 
 
+class IpAdmin(admin.ModelAdmin):
+    list_display = ('id', 'ip', 'time')
+    list_filter = ('id', 'ip', 'time')
+    search_fields = ('id', 'ip', 'time')
+    ordering = ('-time',)
+
+
 admin.site.register(Post, PostAdmin)
+admin.site.register(IpModel, IpAdmin)
