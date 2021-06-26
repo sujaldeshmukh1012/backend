@@ -54,7 +54,7 @@ class PostDetails(APIView):
         else:
             post.views.add(view_id)
 
-        response = [post_serializer.data]
+        response = post_serializer.data
         return Response(response)
 
 
