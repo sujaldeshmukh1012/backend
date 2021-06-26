@@ -166,5 +166,5 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-# DATABASES['default'] = dj_database_url.config(
-#     conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=600, ssl_require=True)
