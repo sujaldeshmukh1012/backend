@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'post',
+    'storages',
 
 ]
 
@@ -170,3 +171,19 @@ CORS_ALLOW_CREDENTIALS = True
 #     conn_max_age=600, ssl_require=True)
 
 django_heroku.settings(locals())
+
+
+# S3 BUCKET CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAZRB53KIFN22FZSU7'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'gutsnbraces'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
+AWS_S3_REGION_NAME = 'ap-south-1'  # change to your region
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_ADDRESSING_STYLE = "virtual"

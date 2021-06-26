@@ -1,4 +1,5 @@
 asgiref==3.2.10
+boto3==1.17.1
 certifi==2021.5.30
 cffi==1.14.5
 chardet==4.0.0
@@ -11,6 +12,7 @@ django-heroku==0.3.1
 django-material-admin==1.8.5
 django-richtextfield==1.6.1
 djangorestframework==3.12.4
+django-storages==1.11.1
 gunicorn==20.1.0
 idna==2.10
 oauthlib==3.1.1
