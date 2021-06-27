@@ -8,6 +8,7 @@ defusedxml==0.7.1
 Django==3.2.4
 django-autoslug==1.9.8
 django-cors-headers==3.7.0
+django-environ==0.4.5
 django-heroku==0.3.1
 django-material-admin==1.8.5
 django-richtextfield==1.6.1

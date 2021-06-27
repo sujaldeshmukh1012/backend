@@ -1,17 +1,22 @@
+import environ
 import os
 from pathlib import Path
 import django_heroku
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s%p!i-n5g*)_i%58bte%^vj0l@*cz%tu+e8_7#aa8r9ttz^a#b'
+SECRET_KEY = env('SECRET_KEY')  # env
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # env
 
 ALLOWED_HOSTS = ["*"]
 
@@ -175,15 +180,14 @@ django_heroku.settings(locals())
 
 # S3 BUCKET CONFIG
 
-AWS_ACCESS_KEY_ID = 'AKIAZRB53KIFN22FZSU7'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'gutsnbraces'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')  # env
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')  # env
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')  # env
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
-AWS_S3_REGION_NAME = 'ap-south-1'  # change to your region
-AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_S3_ADDRESSING_STYLE = "virtual"
+AWS_S3_FILE_OVERWRITE = env('AWS_S3_FILE_OVERWRITE')  # env
+AWS_DEFAULT_ACL = env('AWS_DEFAULT_ACL')  # env
+DEFAULT_FILE_STORAGE = env('DEFAULT_FILE_STORAGE')  # env
+STATICFILES_STORAGE = env('STATICFILES_STORAGE')  # env
+AWS_S3_HOST = env('AWS_S3_HOST')  # env
+AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')  # change to your region   #env
+AWS_S3_SIGNATURE_VERSION = env('AWS_S3_SIGNATURE_VERSION')  # env
