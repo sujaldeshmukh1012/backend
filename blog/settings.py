@@ -163,7 +163,7 @@ DJRICHTEXTFIELD_CONFIG = {
 # }
 
 CORS_ORIGIN_WHITELIST = [
-    # 'http://localhost:3000',
+    'http://localhost:3000',
     'https://gutsnbraces.herokuapp.com',
     'https://gutsnbraces.firebaseapp.com',
     'https://gutsnbraces.web.app',
