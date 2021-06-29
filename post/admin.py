@@ -6,14 +6,14 @@ from django.contrib import admin
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'posted', 'author', 'likes')
-    list_filter = ('views', 'likes', 'id')
-    search_fields = ('id', 'title', 'views', 'body')
+    list_filter = ('likes', 'id')
+    search_fields = ('id', 'title', 'body')
     ordering = ('-posted',)
 
 
 class IpAdmin(admin.ModelAdmin):
     list_display = ('id', 'ip', 'time')
-    list_filter = ('id', 'ip', 'time')
+    list_filter = ('time',)
     search_fields = ('id', 'ip', 'time')
     ordering = ('-time',)
 
