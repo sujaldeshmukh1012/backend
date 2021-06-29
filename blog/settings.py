@@ -168,7 +168,8 @@ CORS_ORIGIN_WHITELIST = [
     'https://gutsnbraces.firebaseapp.com',
     'https://gutsnbraces.web.app',
     'http://gutsnbraces.com',
-    'https://gutsnbraces.com'
+    'https://gutsnbraces.com',
+    'https://coroprate-site-1012.web.app'
 ]
 CORS_ALLOW_CREDENTIALS = True
 
