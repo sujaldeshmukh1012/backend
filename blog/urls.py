@@ -7,7 +7,7 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('post.urls')),
-    path('textfield/', include('djrichtextfield.urls')),
+    path('tinymce/', include('tinymce.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

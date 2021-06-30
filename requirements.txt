@@ -11,7 +11,7 @@ django-cors-headers==3.7.0
 django-environ==0.4.5
 django-heroku==0.3.1
 django-material-admin==1.8.5
-django-richtextfield==1.6.1
+django-tinymce==3.2.0
 djangorestframework==3.12.4
 django-storages==1.11.1
 gunicorn==20.1.0

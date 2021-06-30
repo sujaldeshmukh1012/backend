@@ -1,8 +1,8 @@
 from django.db import models
 
-
+# from django_quill.fields import QuillField
+from tinymce.models import HTMLField
 from django.contrib.auth.models import User
-from djrichtextfield.models import RichTextField
 from autoslug import AutoSlugField
 # Create your models here.
 
@@ -20,7 +20,8 @@ class Post(models.Model):
 
     # body = models.TextField(
     #     max_length=10000, verbose_name='Body', null=False, default='')
-    body = RichTextField(verbose_name='Body', null=False, default='')
+    # body = QuillField(verbose_name='Body', null=False, default='')
+    body = HTMLField(verbose_name='Body', null=False, default='')
 
     posted = models.DateTimeField(auto_now_add=True)
     tags = models.TextField(blank=True, default='blog')
