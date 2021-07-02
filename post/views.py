@@ -61,7 +61,7 @@ class PostDetails(APIView):
 class TrendingAPI(APIView):
 
     def get(self, request):
-        posts = Post.objects.order_by(
+        posts = Post.objects.filter(isvisible=True).order_by(
             'views').order_by('-posted')[:5]
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
@@ -70,7 +70,7 @@ class TrendingAPI(APIView):
 class SearchView(generics.ListAPIView):
     search_fields = ['title', 'body']
     filter_backends = [filters.SearchFilter]
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().filter(isvisible=True)
     serializer_class = PostSerializer
 
 
